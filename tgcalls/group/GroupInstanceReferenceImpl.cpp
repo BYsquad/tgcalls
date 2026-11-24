@@ -689,7 +689,7 @@ public:
 
         webrtc::EnableMedia(deps);
 
-        deps.event_log_factory = std::make_unique<webrtc::RtcEventLogFactory>(deps.task_queue_factory.get());
+        deps.event_log_factory = std::make_unique<webrtc::RtcEventLogFactory>();
 
         _peerConnectionFactory = webrtc::CreateModularPeerConnectionFactory(std::move(deps));
         if (!_peerConnectionFactory) {
